@@ -390,9 +390,9 @@ function loadDatabase(itemCount, searchkey) {
 			let myQuote = "";
 
 			if (childData.quote === "") {
-				myQuote = "<img src='" + imageURL + "' alt='Cannot load image' id='load-image' style='width: 100%;'>";
+				myQuote = "<img src='" + imageURL + "' alt='Cannot load image 😓' id='load-image' style='width: 100%;'>";
 			} else {
-				myQuote = "<center><img src='" + childData.quote + "' alt='Cannot load image' id='load-image'  style='max-width: 100%;max-height:400px'  style='display: none;' onload='imageLoaded()'><div class='loading-text' style='display:none'>Loadfddfdffddfdfding...</div></center>";
+				myQuote = "<center><img src='" + childData.quote + "' alt='Cannot load image 😓' id='load-image'  style='max-width: 100%;max-height:400px'  style='display: none;' onload='imageLoaded()'><div class='loading-text' style='display:none'>Loadfddfdffddfdfding...</div></center>";
 			}
 
 			let timestamps = (childData.timestamp);
@@ -408,7 +408,7 @@ function loadDatabase(itemCount, searchkey) {
 				//"<td><span style='color:#ed4c2b;font-size: 18px'>" + myAuthor + "</span></td>" +
 				"</tr>" +
 				"<tr>" +
-				"<td><em style='color:#2c94fb;word-wrap: break-word;font-size: 12px'>" + "Load Card 100" + "</em></td>" +
+				"<td><em style='color:#2c94fb;word-wrap: break-word;font-size: 12px'>" + childData.subtitle + "</em></td>" +
 				"</tr>" +
 				"</table>";
 
@@ -444,7 +444,7 @@ function loadDatabase(itemCount, searchkey) {
 				let vButton = "<button class='view-button'>COPY TEXT</button>";
 
 				modal.innerHTML = "<center><div><p>" + myAuthor + "<br>" + "<span style='color: #2c94fb;'><b>IMAGE TO TEXT:</b></span>" + tinyMargin +
-					"<section id='selectable-text' ontouchend='getSelectedText()' onmouseup='getSelectedText()'>" + myTitle + "</section></div></div><br><br>" + vButton + dButton + "<div class='close-button'></div>";
+					"<section id='selectabletext' ontouchend='getSelectedText()' onmouseup='getSelectedText()'>" + myTitle + "</section></div></div><br><br>" + vButton + dButton + "<div class='close-button'></div>";
 
 				modal.style.position = 'fixed';
 				modal.style.top = '36%';
@@ -508,13 +508,19 @@ function loadDatabase(itemCount, searchkey) {
 
 				viewButton.addEventListener('click', function () {
 					//openLink(childData.title);
-					if (copySelectedText()) {
-						database.ref('quotes/' + childData.key).update({
-							views: eval(childData.views) + eval(1)
-						});
-						modal.remove();
-						overlay.remove();
-					}
+
+					database.ref('quotes/' + childData.key).update({
+						views: eval(childData.views) + eval(1)
+					});
+					navigator.clipboard.writeText(childData.title).then(function () {
+						console.log('Text successfully copied to clipboard');
+						alert("All text is copied");
+					}).catch(function (err) {
+						console.error('Unable to copy text to clipboard', err);
+					});
+					modal.remove();
+					overlay.remove();
+
 
 				});
 
@@ -606,6 +612,7 @@ function saveData(title, quote, author) {
 					show: "true",
 					views: "0",
 					visits: "0",
+					subtitle: "Image",
 					timestamp: firebase.database.ServerValue.TIMESTAMP
 				}, function (error) {
 					if (error) {
@@ -860,11 +867,11 @@ function copySelectedText() {
 		document.body.removeChild(textarea);
 
 		// Provide feedback to the user
-		alert("Copied!");
+		alert("Selection is copied!");
 		return true;
 	} else {
 		//alert("Please select some text before copying.");
-		alert("Please select text first");
+		alert("All text is copied");
 		return false;
 	}
 }
