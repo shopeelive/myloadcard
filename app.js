@@ -444,7 +444,7 @@ function loadDatabase(itemCount, searchkey) {
 				let vButton = "<button class='view-button'>COPY TEXT</button>";
 
 				modal.innerHTML = "<center><div><p>" + myAuthor + "<br>" + "<span style='color: #2c94fb;'><b>IMAGE TO TEXT:</b></span>" + tinyMargin +
-					"<section id='selectable-text' onmouseup='getSelectedText()' ontouchend='getSelectedText()'>" + myTitle + "</section></div></div><br><br>" + vButton + dButton + "<div class='close-button'></div>";
+					"<section id='selectable-text' ontouchend='getSelectedText()' onmouseup='getSelectedText()'>" + myTitle + "</section></div></div><br><br>" + vButton + dButton + "<div class='close-button'></div>";
 
 				modal.style.position = 'fixed';
 				modal.style.top = '36%';
