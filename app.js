@@ -334,7 +334,7 @@ moreButton.addEventListener('click', function () {
 
 		loadDatabase(items, "");
 		if (childNum <= items) {
-			moreButton.innerHTML = "<b>&#x2713; YOU'RE ALL CAUGHT UP!</b>"
+			//moreButton.innerHTML = "<b>&#x2713; LOAD MORE</b>"
 		}
 
 	}
