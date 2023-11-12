@@ -1,0 +1,312 @@
+<html>
+
+<head>
+    <meta property="og:title" content="SHOPEE FARM LINKS" />
+    <meta property="og:description" content="Share your shopee farmlinks" />
+    <meta property="og:image"
+        content="https://firebasestorage.googleapis.com/v0/b/jeanycar-25a07.appspot.com/o/head-1.webp?alt=media&token=9a8788c2-fa81-4679-81d8-0d315ed755aa" />
+    <meta property="og:url" content="www.shopeefarm.com" />
+
+    <title>SHOPEE FARM LINKS</title>
+    <link rel="icon" href="iconfile.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta http-equiv="refresh" content="30">-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        body {
+            font-family: sans-serif -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard syntax */
+            -webkit-tap-highlight-color: transparent;
+            /* Safari */
+            -moz-tap-highlight-color: transparent;
+            /* Firefox */
+            -ms-tap-highlight-color: transparent;
+            /* MS */
+            tap-highlight-color: transparent;
+
+        }
+
+        #selectable-text {
+            user-select: text;
+            /* or 'auto' to allow both user and browser styles */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loading-page" class="loading-page">
+        <div class="content-box">
+            <div class="fruits-animation-wrapper">
+                <div class="fruits-animation">
+                    <div class="fruit"></div>
+                </div>
+                <div class="shadow"></div>
+            </div>
+            <p></p>
+            <div style="text-align:center;">
+                <span id="loading-dots" style="color:green;">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <a id="top"></a>
+    <div id="container">
+
+        <div id="navigator" style="text-align: center;width: auto;">
+            <div>
+                <a href="javascript:resetPage()" id="banner"><img src="" alt="SHOPEE FARM LINKS" id="header-image"
+                        style="max-width: 100%;" /></a>
+            </div>
+
+            <div id="navigate" style="display:none;">
+                <table border="0" class="tbnhead" id="navigator" align="center" style="max-width: 600px;">
+                    <tr>
+                        <td style="text-align:left; vertical-align:middle;height: 50; padding-left: 12px;">
+                            <span id="backbtn">Create Post</span>
+                        </td>
+
+
+
+                        <td style="text-align:right; vertical-align:middle; padding-right:12px;">
+                            <span id="cancel-button"><span style='color:#48a762'><b>CANCEL</b></span></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+        <div id="header_notify"></div>
+
+
+
+        <div id="postLink" style="display: none;">
+            <form id="post-form" name="post-form">
+
+
+
+                <table border="0" class="tbn" align="center">
+                    <tr>
+                        <td style="text-align:left; vertical-align:middle;height: 50;padding:2px;">
+                            <div style="position: relative;">
+                                <input class="div1" id="author" type="text" placeholder="Anonymous" disabled>
+                                <div class="div2"><label class="toggle-switch">
+                                        <input type="checkbox" unchecked>
+                                        <span class="slider"></span>
+                                    </label></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="">
+                            <textarea id="quote" name="quote" maxlength="320" placeholder="Write something..." cols="33"
+                                rows="3"></textarea>
+
+                            <div id="show-image" class="image-container" style="display:none;">
+                                <img id="preview-image" width="100%">
+                                <a class="close-btn" href="#">&times;</a>
+                            </div>
+
+                            <div id="toolbar" align="center" style="width:100%;">
+                                <table border="0" align="center" style="width:100%;">
+                                    <tr>
+                                        <td style="width: 7%">
+                                            <div>
+                                                <img src="Aa_square.png" width="36px" class="toolbars" id="toolbar-1">
+                                            </div>
+                                        </td>
+                                        <td style="width: 7%">
+                                            <div>
+                                                <img src="photos.png" width="36px" class="toolbars" id="toolbar-2">
+                                            </div>
+                                        </td>
+                                        <td style="width: auto">
+                                            <div>
+                                                <img src="linkurl.png" width="36px" class="toolbars" id="toolbar-3">
+                                            </div>
+                                        </td>
+                                        <td style="width: 7%">
+                                            <div style="display: none;text-align: center;" class="toolbars"
+                                                id="toolbar-4">
+                                                <img src="cancel.png" width="32px">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div id="toolbar-url" style="display: none;">
+                                <table border="0" align="center" style="width:100%;">
+                                    <tr>
+                                        <td style="width:100%">
+                                            <div style="position: relative;">
+                                                <input class="div1" id="url-txt" type="text" placeholder="Enter Link"
+                                                    enabled>
+                                                <div class="div2"><img id="img-cancel" width="20px"></div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" class="tbn3" align="center">
+                    <tr>
+                        <td colspan="2"><button type="submit" id="save-button" disabled><b>POST </b></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+
+
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+
+        <div id="column1">
+
+            <div align="center">
+                <p></p>
+                <div align="center" style="width: 100%;">
+                    <button id="show-form-button"><b>+ CREATE POST</b></button>
+                </div>
+            </div>
+
+            <table id="main_table" class="tbF" align="center">
+
+                <tbody id="quote-table-body">
+
+                </tbody>
+
+            </table>
+
+
+            <div align="center">
+                <div align="center" style="width: 100%;">
+                    <button id="more-button">
+                        <strong>SHOW MORE</strong>
+                    </button>
+                </div>
+            </div>
+
+            <br />
+
+            <div align="center">
+                <div id="showmodal" class="modal">
+                    <form class="modal-content">
+                        <div class="container2">
+                            <div align="right">
+
+                                <label id="m_close" align="right" style="font-weight: bold;">
+                                    [&times;]
+                                </label>
+                            </div>
+
+                            <span id="numberLikes" style="display:none;"></span>
+                            <label id="delete_id"></label>
+
+                            <bold><label id="m_username" style="font-weight: bold;">username</label></bold>
+                            <br>
+
+                            <bold><small><span id="m_visitor" style="color:#808080">visitor</span></small></bold>
+                            <br>
+                            <br>
+                            <label id="m_link">farmlink</label>
+                            <br />
+                            <label id="toHid" style="display: none;">Enter This Link to Delete</label>
+                            <label id="toHid2" style="display: none;">
+                                <small><em>(Copying links within this site is prohibited)</em></small>
+                            </label>
+                            <br />
+                            <br />
+                            <input id="toHid3" type="text" placeholder="Paste Link"
+                                oninput="document.getElementById('alertHid').style.display = 'none';"
+                                style="border: solid #777; width: 100%; display: none;" />
+                            <!--<label id="delID" style="display = 'none'">etwetwe</label>-->
+                            <!--<label id="delID" style="display = 'none'">etwetwe</label>-->
+                            <label id="alertHid" style="display: none;">
+                                <small><em>DELETE FAILED</em></small>
+                            </label>
+                            <div class="clearfix">
+                                <button type="button" id="m_delete" class=" "
+                                    style="background-color: #ddd; font-weight: bold;display: none; margin-bottom:5px">DELETE</button>
+
+                                <span style="margin-bottom:100px"></span>
+
+                                <a id="visit_link" href="https://www.gmail.com">
+                                    <button type="button" id="m_openlink" class=""
+                                        style="background-color: #f44336; font-weight: bold;">VISIT LINK</button>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" style="text-align:center;">
+
+
+
+            <table id="search-box" style="width: 100%;">
+                <tr>
+                    <td style="text-align:center; vertical-align:middle;"><input id="search-in" type="text"
+                            placeholder="Search username, number, pin..."></td>
+                    <td style="text-align:center; vertical-align:middle;"><button id="search-bt"
+                            type="submit">Search</button></td>
+                </tr>
+            </table>
+
+            <h4>
+
+                All Rights Reserved<br>&copy 2018-2023
+
+                </h4>
+
+                <h5>
+                <a>louiejohnc@gmail.com</a>
+                <br>
+                <a href="https://dl.acm.org/profile/99659557358">https://dl.acm.org/profile/99659557358</a>
+
+            </h5>
+
+            <div>
+                <a href="#top">
+                    <div align="center" style="width: 100%;">
+                        <button style="background-color: rgba(1, 1, 1, 0.3);">
+                            <strong>RETURN TO TOP</strong>
+                        </button>
+
+                    </div>
+                </a>
+            </div>
+
+
+
+            <!--<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>-->
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="app_media.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
